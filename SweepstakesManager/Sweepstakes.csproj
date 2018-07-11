@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contestant.cs" />
+    <Compile Include="ISweepstakesManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SweepstakesQueueManager.cs" />
+    <Compile Include="SweepstakesStackManager.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="_Sweepstakes.cs" />
   </ItemGroup>
