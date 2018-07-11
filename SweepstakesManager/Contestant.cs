@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SweepstakesManager
+namespace Sweepstakes
 {
     class Contestant
     {
-        private string firstName;
-        private string lastName;
-        private string emailAddress;
-        private int registrationNumber;
+        public string firstName;
+        public string lastName;
+        public string emailAddress;
+        public int registrationNumber;
 
-        public Contestant(string firstName, string lastName, string emailAddress, int registrationNumber)
+        public Contestant()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.emailAddress = emailAddress;
-            this.registrationNumber = registrationNumber;
+
         }
     }
 }
