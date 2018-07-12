@@ -13,7 +13,6 @@ namespace Sweepstakes
         public MarketingFirm(ISweepstakesManager sweepstakesManager)
         {
             this.sweepstakesManager = sweepstakesManager;
-            DeterminMarketFirmAction();
         }
         public _Sweepstakes GetSweepstakes()
         {

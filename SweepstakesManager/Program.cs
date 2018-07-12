@@ -10,10 +10,11 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            while (true)
+            while (true) // Used to loop back to sweepstakesFactory to select another manager type if needed.
             {
                 SweepstakesFactory sweepstakesFactory = new SweepstakesFactory();
                 MarketingFirm newFirm = new MarketingFirm(sweepstakesFactory.DeterminManager(UserInterface.GetManagerType()));
+                newFirm.DeterminMarketFirmAction();
             }
         }
     }
