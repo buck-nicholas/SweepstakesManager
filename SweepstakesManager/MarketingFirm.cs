@@ -22,11 +22,11 @@ namespace Sweepstakes
         {
             sweepstakesManager.InsertSweepstakes(UserInterface.CreateSweepstake());
         }
-        public void DeterminMarketFirmAction()
+        public void DetermineMarketFirmAction()
         {
             while (true)
             {
-                switch (UserInterface.DeterminMarketingFirmAction())
+                switch (UserInterface.DetermineMarketingFirmAction())
                 {
                     case "1":
                         GetSweepstakes();
@@ -40,7 +40,7 @@ namespace Sweepstakes
                         Environment.Exit(0);
                         break;
                     default:
-                        DeterminMarketFirmAction();
+                        DetermineMarketFirmAction();
                         break;
                 }
             }

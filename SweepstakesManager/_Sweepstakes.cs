@@ -15,13 +15,13 @@ namespace Sweepstakes
         public _Sweepstakes()
         {
             SetSweepStakesName();
-            DeterminWantedAction();
+            DetermineWantedAction();
         }
-        public void DeterminWantedAction()
+        public void DetermineWantedAction()
         {
             while (true)
             {
-                switch (UserInterface.DeterminSweepstakeAction())
+                switch (UserInterface.DetermineSweepstakeAction())
                 {
                     case "1":
                         AddContestant();
@@ -58,7 +58,7 @@ namespace Sweepstakes
         }
         public bool isDoneAddingContestants()
         {
-            if (UserInterface.isDoneAddingContestants().ToLower() == "no")
+            if (UserInterface.IsDoneAddingContestants().ToLower() == "no")
             {
                 return true;
             }
