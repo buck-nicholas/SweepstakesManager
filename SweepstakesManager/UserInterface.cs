@@ -36,5 +36,11 @@ namespace Sweepstakes
             string userInput = GetUserInput("Please enter your email address: ");
             return userInput;
         }
+        public static Guid SetRegistrationNumber()
+        {
+            Guid newGuid;
+            newGuid = Guid.NewGuid();
+            return newGuid;
+        }
     }
 }

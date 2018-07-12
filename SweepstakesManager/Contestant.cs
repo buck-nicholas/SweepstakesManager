@@ -11,11 +11,14 @@ namespace Sweepstakes
         public string firstName;
         public string lastName;
         public string emailAddress;
-        public int registrationNumber;
+        public Guid registrationNumber;
 
         public Contestant()
         {
-
+            firstName = UserInterface.GetContestantFirstName();
+            lastName = UserInterface.GetContestantLastName();
+            emailAddress = UserInterface.GetContestantEmailAddress();
+            registrationNumber = UserInterface.SetRegistrationNumber();
         }
     }
 }
