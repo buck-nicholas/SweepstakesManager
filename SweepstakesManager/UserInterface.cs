@@ -14,13 +14,6 @@ namespace Sweepstakes
             string userInput = Console.ReadLine();
             return userInput;
         }
-        public static void InsertContestantPrompts()
-        {
-            List<string> contestantPrompts = new List<string>();
-            contestantPrompts.Add("Please enter your first name: ");
-            contestantPrompts.Add("Please enter your last name: ");
-            contestantPrompts.Add("Please enter your email address: ");
-        }
         public static string GetContestantFirstName()
         {
             string userInput = GetUserInput("Please enter your first name: ");
@@ -41,6 +34,16 @@ namespace Sweepstakes
             Guid newGuid;
             newGuid = Guid.NewGuid();
             return newGuid;
+        }
+        public static string GetManagerType()
+        {
+            string managerType = GetUserInput("Select Required Manager:\n[1] Stack Manager\n[2] Queue Manager");
+            return managerType;
+        }
+        public static _Sweepstakes CreateSweepstake()
+        {
+            _Sweepstakes newSweepstake = new _Sweepstakes();
+            return newSweepstake;
         }
     }
 }

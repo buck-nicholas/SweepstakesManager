@@ -10,7 +10,8 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            
+            SweepstakesFactory sweepstakesFactory = new SweepstakesFactory();
+            MarketingFirm newFirm = new MarketingFirm(sweepstakesFactory.DeterminManager(UserInterface.GetManagerType()));
         }
     }
 }
