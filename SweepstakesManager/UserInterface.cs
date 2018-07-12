@@ -10,7 +10,8 @@ namespace Sweepstakes
     {
         public static string GetUserInput(string message)
         {
-            Console.Write(message);
+            Console.WriteLine(message);
+            Console.Write("Please Enter Selector:   ");
             string userInput = Console.ReadLine();
             return userInput;
         }
@@ -44,6 +45,21 @@ namespace Sweepstakes
         {
             _Sweepstakes newSweepstake = new _Sweepstakes();
             return newSweepstake;
+        }
+        public static string isDoneAddingContestants()
+        {
+            string userInput = GetUserInput("Add more contestants? [yes] [no] ");
+            return userInput;
+        }
+        public static string DeterminSweepstakeAction()
+        {
+            string userInput = GetUserInput("What would you like to do?\n[1] Add Contestants\n[2] View Contestants\n[3] Determin Winner\n[4] Exit");
+            return userInput;
+        }
+        public static string DeterminMarketingFirmAction()
+        {
+            string userInput = GetUserInput("What would you like to do?\n[1] Get Sweepstake\n[2] Insert Sweepstake\n[3] Change Manager Type\n[4] Exit Application");
+            return userInput;
         }
     }
 }

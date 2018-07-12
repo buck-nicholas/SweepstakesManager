@@ -14,12 +14,62 @@ namespace Sweepstakes
         Contestant contestant;
         public _Sweepstakes()
         {
-            sweepstakesName = UserInterface.GetUserInput("Enter Sweepstakes Name: ");
+            SetSweepStakesName();
+            DeterminWantedAction();
+        }
+        public void DeterminWantedAction()
+        {
+            while (true)
+            {
+                switch (UserInterface.DeterminSweepstakeAction())
+                {
+                    case "1":
+                        AddContestant();
+                        break;
+                    case "2":
+                        DisplayContestants();
+                        break;
+                    case "3":
+                        PickWinner();
+                        break;
+                    case "4":
+                        return;
+                    default:
+                        return;
+                }
+            }
+        }
+        public void SetSweepstakesName()
+        {
+            if(sweepstakesName == null)
+            {
+                sweepstakesName = UserInterface.GetUserInput("Enter Sweepstakes Name: ");
+            }
+        }
+        public void AddContestant()
+        {
+            bool isDone = false;
+            while (!isDone)
+            {
+                CreateNewContestant();
+                RegisterContestant(contestant);
+                isDone = isDoneAddingContestants();
+            }
+        }
+        public bool isDoneAddingContestants()
+        {
+            if (UserInterface.isDoneAddingContestants().ToLower() == "no")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void CreateNewContestant()
-        {
-            Contestant newContestant = new Contestant();
-            RegisterContestant(newContestant);
+        {          
+            contestant = new Contestant();
         }
         public void RegisterContestant(Contestant contestant)
         {
@@ -40,6 +90,13 @@ namespace Sweepstakes
         {
             Console.Write("Sweepstakes Name: ");
             Console.ReadLine();
+        }
+        public void DisplayContestants()
+        {
+            foreach(KeyValuePair<Guid, Contestant> keyvaluepair in contestants)
+            {
+                Console.WriteLine(keyvaluepair.Value.firstName + " " + keyvaluepair.Value.lastName + " Registration Number: " + keyvaluepair.Value.registrationNumber);
+            }
         }
     }
 }

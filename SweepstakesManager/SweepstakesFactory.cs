@@ -8,7 +8,6 @@ namespace Sweepstakes
 {
     class SweepstakesFactory
     {
-        ISweepstakesManager sweepstakesManager;
         public ISweepstakesManager DeterminManager(string managerType)
         {
             switch (managerType)
@@ -19,7 +18,6 @@ namespace Sweepstakes
                     return new SweepstakesStackManager();
                 default:
                     return DeterminManager(managerType);
-                    
             }
         }
     }

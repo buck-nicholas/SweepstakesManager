@@ -13,6 +13,7 @@ namespace Sweepstakes
         public MarketingFirm(ISweepstakesManager sweepstakesManager)
         {
             this.sweepstakesManager = sweepstakesManager;
+            DeterminMarketFirmAction();
         }
         public _Sweepstakes GetSweepstakes()
         {
@@ -21,6 +22,29 @@ namespace Sweepstakes
         public void InsertSweepstakes()
         {
             sweepstakesManager.InsertSweepstakes(UserInterface.CreateSweepstake());
+        }
+        public void DeterminMarketFirmAction()
+        {
+            while (true)
+            {
+                switch (UserInterface.DeterminMarketingFirmAction())
+                {
+                    case "1":
+                        GetSweepstakes();
+                        break;
+                    case "2":
+                        InsertSweepstakes();
+                        break;
+                    case "3":
+                        return;
+                    case "4":
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        DeterminMarketFirmAction();
+                        break;
+                }
+            }
         }
     }
 }
